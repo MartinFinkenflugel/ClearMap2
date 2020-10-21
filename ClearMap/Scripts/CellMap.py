@@ -25,7 +25,7 @@ References
 .. [Renier2016] `Mapping of brain activity by automated volume analysis of immediate early genes. Renier* N, Adams* EL, Kirst* C, Wu* Z, et al. Cell. 2016 165(7):1789-802 <https://doi.org/10.1016/j.cell.2016.05.007>`_
 """
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
-__license__   = 'GPLv3 - GNU General Pulic License v3 (see LICENSE)'
+__license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE)'
 __copyright__ = 'Copyright © 2020 by Christoph Kirst'
 __webpage__   = 'http://idisco.info'
 __download__  = 'http://www.github.com/ChristophKirst/ClearMap2'
