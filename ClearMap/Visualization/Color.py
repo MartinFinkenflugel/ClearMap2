@@ -1101,7 +1101,7 @@ def write_LUT(filename, colors):
 
 
 def write_PAL(filename, colors):
-  """Write a pal pallette file from a list of colors for use with e.g. imaris
+  """Write a pal palette file from a list of colors for use with e.g. imaris
   
   Arguments
   ---------

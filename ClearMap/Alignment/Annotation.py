@@ -507,7 +507,7 @@ def convert_label_to_color(label, key = 'id', level = None, alpha = True, as_int
   alpha : bool
     If True, return rgba values.
   as_int : bool
-    If True, return rgb valueas as int between 0 and 255.
+    If True, return rgb values as int between 0 and 255.
   int_type : dtype
     Type for the color array.
     
@@ -626,7 +626,7 @@ def write_color_palette(filename = None):
   elif fext == 'lut':
     col.write_LUT(filename, cm);
   else:
-    raise RuntimeError('color pallete format: %s not lut or pal' % fext);
+    raise RuntimeError('color palette format: %s not lut or pal' % fext);
       
   return filename;
 

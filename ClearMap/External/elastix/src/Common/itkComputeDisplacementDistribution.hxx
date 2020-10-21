@@ -91,7 +91,7 @@ ComputeDisplacementDistribution< TFixedImage, TTransform >
    * needed, which saves valuable re-allocation time.
    *
    * This function is only to be called at the start of each resolution.
-   * Re-initialization of the potentialy large vectors is performed after
+   * Re-initialization of the potentially large vectors is performed after
    * each iteration, in the accumulate functions, in a multi-threaded fashion.
    * This has performance benefits for larger vector sizes.
    */
