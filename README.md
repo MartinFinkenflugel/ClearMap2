@@ -99,7 +99,7 @@ For experimental protocols also refer to [idisco.info](http:://idisco.info)
 [News and Media](https://christophkirst.github.io/ClearMap2Documentation/html/media.html)
 =========================================================================================
 
-ClearMap has been featured in differnet articles, interviews and a TEDx talk:
+ClearMap has been featured in different articles, interviews and a TEDx talk:
 
 <p align="center">
 <a href="https://www.ted.com/talks/christoph_kirst_a_transparent_journey_into_the_brain_and_its_flexible_function">
@@ -128,7 +128,7 @@ See who cites us:
   
   * [ClearMap 2.0](https://scholar.google.com/scholar?cites=15218093461598622032&as_sdt=2005&sciodt=0,5&hl=en)
   
-and cite us if you use the sofware in any form:
+and cite us if you use the software in any form:
 
     @article{kirst2020mapping,
        title={Mapping the fine-scale organization and plasticity of the brain vasculature},

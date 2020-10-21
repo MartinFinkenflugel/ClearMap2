@@ -5,7 +5,7 @@ Workspace
 
 The Workspace module keeps track of the data files of a project.
 Using this module will simplify access to data and results using coherent
-filenames accross experiments and samples.
+filenames across experiments and samples.
 
 One can think of a Workspace as a transparent data structure for ClearMap.
 

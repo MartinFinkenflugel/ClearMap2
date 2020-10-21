@@ -73,10 +73,10 @@ def trace(source, score, start, stop,
   """
 
 #    if not source.flags.c_contiguous:
-#        raise RuntimeError('Source array not c-contigous');
+#        raise RuntimeError('Source array not c-contiguous');
 #    
 #    if not tubeness.flags.c_contiguous:
-#        raise RuntimeError('Tubeness array not c-contigous');    
+#        raise RuntimeError('Tubeness array not c-contiguous');
   
   if maxSteps is None:
     maxSteps = -1;
@@ -125,13 +125,13 @@ def trace_to_mask(source, tubeness, start, mask,
   """
 
 #    if not source.flags.c_contiguous:
-#        raise RuntimeError('Source array not c-contigous');
+#        raise RuntimeError('Source array not c-contiguous');
 #    
 #    if not tubeness.flags.c_contiguous:
-#        raise RuntimeError('Tubeness array not c-contigous');  
+#        raise RuntimeError('Tubeness array not c-contiguous');
 #        
 #    if not mask.flags.c_contiguous:
-#        raise RuntimeError('Mask array not c-contigous');    
+#        raise RuntimeError('Mask array not c-contiguous');
   
   if maxSteps is None:
     maxSteps = -1;

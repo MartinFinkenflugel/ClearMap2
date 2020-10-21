@@ -96,7 +96,7 @@ def read(filename, sink = None, slicing = None, as_shared = None, blocks = None,
   shape, dtype, order, offset = source.shape, source.dtype, source.order, source.offset;
   
   if order not in ['C', 'F']:
-      raise NotImplementedError('Cannot read in parallel from non-contigous source!');  
+      raise NotImplementedError('Cannot read in parallel from non-contiguous source!');
       #TODO: implement parallel reader with strides !
   
   if verbose:
@@ -104,7 +104,7 @@ def read(filename, sink = None, slicing = None, as_shared = None, blocks = None,
     print('Reading data from source of shape = %r, dtype = %r, order = %r, offset = %r' %(shape, dtype, order, offset)); 
   
   
-  #use initialze  form IO !!
+  #use initialize  form IO !!
   #prepare outputs
   if as_shared:
     data = sma.empty(shape, dtype = dtype, order = order);
@@ -174,7 +174,7 @@ def write(filename, data, slicing = None, blocks = None, processes = None, verbo
   if (data.order != order):
     raise RuntimeError('Order of arrays do not match %r!=%r' % (data.order, order));    
   if order not in ['C', 'F']:
-    raise NotImplementedError('Cannot read in parallel from non-contigous source!');  
+    raise NotImplementedError('Cannot read in parallel from non-contiguous source!');
     #TODO: implement parallel reader with strides !
   
   if verbose:

@@ -71,7 +71,7 @@ if __name__ == "__main__":
   ### Data conversion
   ############################################################################### 
   
-  #%% Convet raw data to npy file     
+  #%% Convert raw data to npy file
                
   source = ws.source('raw');
   sink   = ws.filename('stitched')
@@ -112,7 +112,7 @@ if __name__ == "__main__":
   
   #p3d.plot([ws.filename('resampled'), ws.filename('resampled', postfix='autofluorescence')])
   
-  #%% Aignment - resampled to autofluorescence
+  #%% Alignment - resampled to autofluorescence
   
   # align the two channels
   align_channels_parameter = {            
@@ -130,7 +130,7 @@ if __name__ == "__main__":
   
   elx.align(**align_channels_parameter);
   
-  #%% Alignment - autoflourescence to reference
+  #%% Alignment - autofluorescence to reference
   
   # align autofluorescence to reference
   align_reference_parameter = {            
@@ -154,7 +154,7 @@ if __name__ == "__main__":
   
   #%% Crop test data 
   
-  #select sublice for testing the pipeline
+  #select subslice for testing the pipeline
   slicing = (slice(2000,2200),slice(2000,2200),slice(50,150));
   ws.create_debug('stitched', slicing=slicing);
   ws.debug = True; 

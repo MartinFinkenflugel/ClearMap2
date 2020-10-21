@@ -4,7 +4,7 @@ Hessian
 
 Module to compute curvature measures based on Hessian Matrix
 
-Usefull for filtering vasculature data
+Useful for filtering vasculature data
 """
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
 __license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE.txt)'

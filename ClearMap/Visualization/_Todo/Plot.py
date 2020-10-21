@@ -309,7 +309,7 @@ def overlayPoints(dataSource, pointSource, sink = None, pointColor = [1,0,0], x 
             for p in points: # faster version using voxelize ?
                 cimage[p[0], p[1], p[2], :] = pointColor;
         else:
-            raise RuntimeError('overlayPoints: data dimension %d not suported' % data.ndim);
+            raise RuntimeError('overlayPoints: data dimension %d not supported' % data.ndim);
     
     else:
         cimage = vox.voxelize(points, data.shape, method = 'Pixel');

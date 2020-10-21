@@ -265,10 +265,10 @@ def connectPoint(data, mask, endpoints, start_index, radius,
   # find neighbour end points and try to connect to nearest one
   # if path score good enough add path and remove two endpoints
   # else try to connect to binarized image
-  # if path score good enugh connect to closest skeleton point
+  # if path score good enough connect to closest skeleton point
   # else not connectable
   
-  #assumes everything is in fotran order
+  #assumes everything is in fortran order
   strides = np.array(data.strides) / data.itemsize;
   shape = data.shape;
   #print strides, shape

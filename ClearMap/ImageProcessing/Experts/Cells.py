@@ -58,7 +58,7 @@ import ClearMap.Utils.HierarchicalDict as hdict
 
 default_cell_detection_parameter = dict( 
   #flatfield
-  iullumination_correction = dict(flatfield = None,
+  illumination_correction = dict(flatfield = None,
                                   scaling = 'mean'),
                        
   #background removal
@@ -85,12 +85,12 @@ default_cell_detection_parameter = dict(
   shape_detection = dict(threshold = 700,
                          save = False),
   
-  #cell intenisty detection                   
+  #cell intensity detection
   intensity_detection = dict(method = 'max',
                              shape = 3,
                              measure = ['source', 'background']), 
 )
-"""Parameter for the cell detectrion pipeline. 
+"""Parameter for the cell detection pipeline. 
 See :func:`detect_cells` for details."""
 
 
@@ -125,7 +125,7 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
     Parameter for the binarization. See below for details.
   processing_parameter : dict
     Parameter for the parallel processing. 
-    See :func:`ClearMap.ParallelProcessing.BlockProcesing.process` for 
+    See :func:`ClearMap.ParallelProcessing.BlockProcessing.process` for
     description of all the parameter.
   verbose : bool
     If True, print progress output.
@@ -182,11 +182,11 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
     Background removal step parameter.
 
     shape : tuple
-      The shape of the structure lement to estimate the background.
+      The shape of the structure element to estimate the background.
       This should be larger than the typical cell size.
     
     form : str
-      The form of the structur element (e.g. 'Disk')
+      The form of the structure element (e.g. 'Disk')
         
     save : str or None
       Save the result of this step to the specified file if not None.
@@ -197,7 +197,7 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
     Equalization step parameter.
     See also :func:`ClearMap.ImageProcessing.LocalStatistics.local_percentile`
     
-    precentile : tuple
+    percentile : tuple
       The lower and upper percentiles used to estimate the equalization.
       The lower percentile is used for normalization, the upper to limit the
       maximal boost to a maximal intensity above this percentile.
@@ -214,7 +214,7 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
       Larger spacings speed up processing but become locally less precise.
         
     interpolate : int
-      The order of the interpoltation used in constructing the full 
+      The order of the interpolation used in constructing the full
       background estimate in case a non-trivial spacing is used.
       
     save : str or None
@@ -232,11 +232,11 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
       
     sigma : tuple or None
        The std of the inner Gaussian.
-       If None, detemined automatically from shape.
+       If None, determined automatically from shape.
     
     sigma2 : tuple or None
        The std of the outer Gaussian.
-       If None, detemined automatically from shape.
+       If None, determined automatically from shape.
     
     save : str or None
       Save the result of this step to the specified file if not None.
@@ -248,8 +248,8 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
     Extended maxima detection step parameter.
 
     h_max : float or None
-      The 'height'for the extended maxima.
-      If None, simple local maxima detection isused.
+      The 'height' for the extended maxima.
+      If None, simple local maxima detection is used.
 
     shape : tuple
       The shape of the structural element for extended maxima detection.
@@ -273,7 +273,7 @@ def detect_cells(source, sink = None, cell_detection_parameter = default_cell_de
     Shape detection step parameter.
 
     threshold : float
-      Cell shape is expanded from maxima if pixles are above this threshold
+      Cell shape is expanded from maxima if pixels are above this threshold
       and not closer to another maxima.
     
     save : str or None

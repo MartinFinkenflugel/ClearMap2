@@ -99,7 +99,7 @@ def search_indices_sphere(radius, kernel = None):
   indices : array
      Array of ints of relative indices for the search area voxels.
   """
-  #create coordiante grid          
+  #create coordinate grid
   grid = [np.arange(-r,r+1, dtype=float)/np.maximum(1,r) for r in radius];                    
   grid = np.array(np.meshgrid(*grid, indexing = 'ij'));
   
@@ -138,7 +138,7 @@ def search_indices_rectangle(radius, kernel = None):
   indices : array
      Array of ints of relative indices for the search area voxels.
   """
-  #create coordiante grid
+  #create coordinate grid
   grid = [np.arange(-r,r+1, dtype=int) for r in radius];                    
   grid = np.array(np.meshgrid(*grid, indexing = 'ij'));
   

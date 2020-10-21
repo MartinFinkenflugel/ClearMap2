@@ -10,7 +10,7 @@ Supported functionality:
     * contour plots
     
 Main routines are:
-    * :func:`ClearMap.Visualziation.Matplotlib.PlotUtils.plot_density`
+    * :func:`ClearMap.Visualization.Matplotlib.PlotUtils.plot_density`
 
 """ 
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'

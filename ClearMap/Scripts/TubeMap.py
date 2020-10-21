@@ -64,7 +64,7 @@ if __name__ == '__main__':
   ### Tile conversion
   ############################################################################### 
   
-  #%% Convet raw data to npy files     
+  #%% Convert raw data to npy files
                
   io.convert_files(ws.file_list('raw', extension='tif'), extension='npy', 
                    processes=12, verbose=True);
@@ -168,7 +168,7 @@ if __name__ == '__main__':
   
   #p3d.plot([ws.filename('resampled'), ws.filename('resampled', postfix='autofluorescence')])
   
-  #%% Aignment - resampled to autofluorescence
+  #%% Alignment - resampled to autofluorescence
   
   # align the two channels
   align_channels_parameter = {            
@@ -186,7 +186,7 @@ if __name__ == '__main__':
   
   elx.align(**align_channels_parameter);
   
-  #%% Alignment - autoflourescence to reference
+  #%% Alignment - autofluorescence to reference
   
   # align autofluorescence to reference
   align_reference_parameter = {            
@@ -210,7 +210,7 @@ if __name__ == '__main__':
   
   #%% Crop test data 
   
-  #select sublice for testing the pipeline
+  #select subslice for testing the pipeline
   slicing = (slice(None),slice(0,1000),slice(900,1500));
   ws.create_debug('stitched', slicing=slicing);
   ws.create_debug('stitched', postfix='arteries', slicing=slicing);

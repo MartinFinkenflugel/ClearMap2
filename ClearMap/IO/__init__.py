@@ -7,7 +7,7 @@ This module handels data reading and writing in ClearMap via sources and
 sinks.
 
 The base class for IO is a :mod:`~ClearMap.IO.Source` that automatically 
-detects file type and gathers some basic infomration about the file.
+detects file type and gathers some basic information about the file.
 
 The :mod:`~ClearMap.IO.IO` module is the main module organizing all the IO 
 functionailty.
@@ -21,8 +21,8 @@ Numpy-Source(30, 40, 50)[float64]|C|
 
 The first tuple is the shape of the array, the next list contains the datype 
 or data structure, the `|.|` bracket denotes the order of this array, which 
-can be `|C|` for c-contigous, `|F|` for Fortran contigous or '' if the array
-is non-contigous.
+can be `|C|` for c-contiguous, `|F|` for Fortran contiguous or '' if the array
+is non-contiguous.
 
 File sources contain further information about the location of the files etc.
 

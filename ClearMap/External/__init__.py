@@ -3,7 +3,7 @@
 External
 ========
 
-Interface to external packages modifed to work with ClearMap.
+Interface to external packages modified to work with ClearMap.
 """ 
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
 __license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE.txt)'

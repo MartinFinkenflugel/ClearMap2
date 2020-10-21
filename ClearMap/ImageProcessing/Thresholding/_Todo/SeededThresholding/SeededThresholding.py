@@ -1,7 +1,7 @@
 """
 Module to compute clipped images
 
-Usefull to sace memory in large data sets
+Useful to save memory in large data sets
 """
 __author__    = 'Christoph Kirst <ckirst@rockefeller.edu>'
 __license__   = 'MIT License <http://www.opensource.org/licenses/mit-license.php>'

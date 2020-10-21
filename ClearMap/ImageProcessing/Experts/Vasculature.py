@@ -188,7 +188,7 @@ def binarize(source, sink = None, binarization_parameter = default_binarization_
     Parameter for the binarization. See below for details.
   processing_parameter : dict
     Parameter for the parallel processing. 
-    See :func:`ClearMap.ParallelProcessing.BlockProcesing.process` for 
+    See :func:`ClearMap.ParallelProcessing.BlockProcessing.process` for
     description of all the parameter.
   verbose : bool
     If True, print progress output.
@@ -285,7 +285,7 @@ def binarize(source, sink = None, binarization_parameter = default_binarization_
         For the vasculature a typical value is (2,2,1).
         
       interpolate : int
-        The order of the interpoltation used in constructing the full 
+        The order of the interpolation used in constructing the full
         background estimate in case a non-trivial spacing is used.
         
         For the vasculature a typical value is 1.
@@ -355,7 +355,7 @@ def binarize(source, sink = None, binarization_parameter = default_binarization_
       For the vasculature a typical value is (50,50,5)
         
     interpolate : int
-      The order of the interpoltation used in constructing the full 
+      The order of the interpolation used in constructing the full
       background estimate in case a non-trivial spacing is used.
       
       For the vasculature a typical value is 1.
@@ -370,7 +370,7 @@ def binarize(source, sink = None, binarization_parameter = default_binarization_
     Equalization step parameter.
     See also :func:`ClearMap.ImageProcessing.LocalStatistics.local_percentile`
     
-    precentile : tuple
+    percentile : tuple
       The lower and upper percentiles used to estimate the equalization.
       The lower percentile is used for normalization, the upper to limit the
       maximal boost to a maximal intensity above this percentile.
@@ -395,7 +395,7 @@ def binarize(source, sink = None, binarization_parameter = default_binarization_
       For the vasculature a typical value is (50,50,5)
         
     interpolate : int
-      The order of the interpoltation used in constructing the full 
+      The order of the interpolation used in constructing the full
       background estimate in case a non-trivial spacing is used.
       
       For the vasculature a typical value is 1.

@@ -7,7 +7,7 @@ Module to handle label and annotation info from Allen Brain Atlas (v2).
  
 Notes
 -----      
-  - The files containting annotation information is assumed to be in the path 
+  - The files containing annotation information is assumed to be in the path
     stored in :const:`atlas_path`, which defaults to the resource path 
     :const:`ClearMap.Settings.resources_path`.
     
@@ -54,7 +54,7 @@ import ClearMap.Visualization.Color as col
 
 #TODO: move to settings ?
 atlas_path = os.path.join(settings.resources_path, 'Atlas');
-"""Default path to atlas infomration.
+"""Default path to atlas information.
 """
 
 default_annotation_file = os.path.join(atlas_path, 'ABA_25um_annotation.tif');
@@ -188,7 +188,7 @@ class Annotation(object):
     Arguments
     ---------
     label_file : str
-      File with label infomration in json format.
+      File with label information in json format.
     """
     self.initialize(label_file=label_file, extra_label=extra_label, annotation_file=annotation_file);
   
@@ -208,14 +208,14 @@ class Annotation(object):
     self.annotation_file = annotation_file;
     self.extra_label = extra_label;
     
-    #initialze label tree    
+    #initialize label tree
     with open(label_file) as dfile:
       aba_json = dfile.read();
       dfile.close();
     aba = json.loads(aba_json)
 
     root = aba['msg'][0];
-    self.root = self.initialze_tree(root);
+    self.root = self.initialize_tree(root);
 
     #maxgraph = max(self.get_list('graph_order'));
     for a in extra_label:
@@ -247,9 +247,9 @@ class Annotation(object):
     self.acronyms   = self.get_list('acronym');
   
   
-  def initialze_tree(self, root, parent = None, level = 0):
+  def initialize_tree(self, root, parent = None, level = 0):
     label = Label(  { key : root[key] for key in root.keys() if key not in ["children"]}, parent = parent, level = level);
-    label.children = [self.initialze_tree(c, parent = label, level = level + 1) for c in root['children']];
+    label.children = [self.initialize_tree(c, parent = label, level = level + 1) for c in root['children']];
     return label;
   
   
@@ -416,7 +416,7 @@ def set_label_file(label_file, extra_label = None):
 ### Labeling
 ###############################################################################
 
-#TODO:use parallel arryay processing and lut routines to speed up? 
+#TODO:use parallel array processing and lut routines to speed up?
 def label_points(points, annotation_file = None, invalid = 0, key = 'order', level = None):
   """Label points according to the annotation in the labeled image file.
   
@@ -469,12 +469,12 @@ def convert_label(label, key = 'id', value = 'order', level = None, method = Non
   
   Arguments
   ---------
-  lable : array
+  label : array
     List of labels to convert.
   key : str
     The key corresponding to the label.
   value : str
-    The key to ocnvert the lable to.
+    The key to convert the lable to.
   level : nt or None
     Convert at this level of the hierarchy. I fNone use full hierarchy.
   method : 'map' or 'dictionary'
@@ -529,7 +529,7 @@ def count_label(label, weights = None, key = 'order', hierarchical = True):
   weights : array 
     Optional list of weights for each label.
   key : str
-    The key the lables are given in.
+    The key the labels are given in.
   hierarchical : bool
     If True, count all sub-labels.
     
@@ -682,7 +682,7 @@ def prepare_annotation_files(slicing = None, orientation = None,
     The target directory. If None, use ClearMap resources folder.
   postfix : str or None
     Use this postfix for the cropped annotation file. If None and automatic 
-    label is choosen.
+    label is chosen.
   annotation_file : str or None
     The annotation file to use.
   reference_file : str or None
@@ -690,7 +690,7 @@ def prepare_annotation_files(slicing = None, orientation = None,
   distance_to_surface_file : str or None
     The distance file to use.
   overwrite : bool
-    If True, overwrite exisitng files.
+    If True, overwrite existing files.
     
   Returns
   -------
@@ -756,7 +756,7 @@ def prepare_annotation_files(slicing = None, orientation = None,
   
 
 def format_annotation_filename(filename, orientation = None, slicing = None, postfix = None, directory = None):
-  """Formats the annotation filename given oriantion and slicing.""" 
+  """Formats the annotation filename given orientation and slicing."""
   
   if postfix is None:
     orientation = res.format_orientation(orientation, default=(1,2,3));

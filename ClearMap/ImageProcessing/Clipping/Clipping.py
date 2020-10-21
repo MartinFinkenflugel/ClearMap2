@@ -4,7 +4,7 @@ Clipping
 
 Module to compute clipped images
 
-Usefull to sace memory in large data sets
+Useful to save memory in large data sets
 """
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
 __license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE.txt)'

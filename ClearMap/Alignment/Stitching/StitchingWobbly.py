@@ -222,17 +222,17 @@ class WobblySource(strg.Source):
   
     
   def coordinate_from_local(self, local_coordinate):
-    """Converts a local wobble axis coordiante to the non-local coordinate.
+    """Converts a local wobble axis coordinate to the non-local coordinate.
     
     Arguments
     ---------
     local_coordinate : int
-      The local coordiante within the source.
+      The local coordinate within the source.
     
     Returns
     -------
-    coordiante : int
-      The non-local coordiante.
+    coordinate : int
+      The non-local coordinate.
     """
     position = self.coordainte;
     shape = self.height;
@@ -1487,7 +1487,7 @@ def _shifts_qualities_status(errors, status, method='minimization', add_shift=No
 
 
 def inspect_align_layout(alignment, verbose):
-  """Parse the infomration saved during a align_layout.
+  """Parse the information saved during a align_layout.
   
   Returns
   -------

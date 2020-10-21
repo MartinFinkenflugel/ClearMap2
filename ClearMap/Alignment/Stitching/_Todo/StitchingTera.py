@@ -94,7 +94,7 @@ def initializeStitcher(path = None):
     if os.path.exists(terasticherbin):
         TeraStitcherBinary = terasticherbin;
     else:
-        raise RuntimeError("Cannot find TeraSticher binary %s, set path in Settings.py accordingly!" % terasticherbin);
+        raise RuntimeError("Cannot find TeraStitcher binary %s, set path in Settings.py accordingly!" % terasticherbin);
     
     # add the global optimization script folder 
     if not fileutils.isFile(os.path.join(path, 'LQP_HE.py')):
@@ -104,7 +104,7 @@ def initializeStitcher(path = None):
     
     Initialized = True;
     
-    print "TeraSticher sucessfully initialized from path: %s" % path;
+    print "TeraStitcher sucessfully initialized from path: %s" % path;
     
     return path;
 
@@ -113,17 +113,17 @@ def initializeStitcher(path = None):
 initializeStitcher();
 
 
-def checkSticherInitialized():
-    """Checks if TeraSticher is initialized
+def checkStitcherInitialized():
+    """Checks if TeraStitcher is initialized
     
     Returns:
-        bool: True if TeraSticher paths are set.
+        bool: True if TeraStitcher paths are set.
     """
     
     global Initialized;
     
     if not Initialized:
-        raise RuntimeError("TeraSticher not initialized: run initializeTeraSticher(path) with proper path to TeraSticher first");
+        raise RuntimeError("TeraStitcher not initialized: run initializeTeraStitcher(path) with proper path to TeraStitcher first");
     #print ElastixSettings.ElastixBinary;
 
     return True;
@@ -384,7 +384,7 @@ def findFileInfo(filename):
 
 
 def copyTeraStitcherStackToFileList(source, sink, verbose = True):
-  """Copies image files from TeraSticher file structure to a list of files
+  """Copies image files from TeraStitcher file structure to a list of files
   
   Arguments:
     source (str): base directory of the TeraStitcher files
@@ -410,7 +410,7 @@ def copyTeraStitcherStackToFileList(source, sink, verbose = True):
  
 
 def moveTeraStitcherStackToFileList(source, sink, deleteDirectory = True, verbose = True):
-  """Moves image files from TeraSticher file structure to a list of files
+  """Moves image files from TeraStitcher file structure to a list of files
   
   Arguments:
     source (str): base directory of the TeraStitcher files
@@ -448,7 +448,7 @@ def moveTeraStitcherStackToFileList(source, sink, deleteDirectory = True, verbos
 #    source (Str): the expression to check
 #  
 #  Returns:
-#    bool: True if the expression containes three place holders with group names 'row', 'col', 'z'
+#    bool: True if the expression contains three place holders with group names 'row', 'col', 'z'
 #
 #  Note:
 #    A tile expression is assumed to have a fomr like '/path/to/files/image_file_(?P<row>\d{2})_(?P<col>\d{2})_(?P<z>\d{4}).tif'
@@ -743,7 +743,7 @@ def shiftStackRow(xmlFile, row, shift, newFile = None):
   
   
 def xmlImportStack(row, col, zrange, displacement, stitchable = False, directory = None, expression = None, dim = None): 
-  """Creates a single stack xml information for the xmlf import file of TeraSticher
+  """Creates a single stack xml information for the xmlf import file of TeraStitcher
   
   Arguments:
     row, col (int or str): the row and column specifications
@@ -821,7 +821,7 @@ def xmlImport(baseDirectory, size, resolution = (1.0, 1.0, 1.0), origin = (0.0, 
     resolution (tuple): resolution of the image n microns per pixel
     origin (tuple): origin of the image
     overlap (tuple): overlap of the tiles in x,y in microns
-    addOverlap (tuple): additional overlap to account for in the displacement calculation, usefull to add extra search space
+    addOverlap (tuple): additional overlap to account for in the displacement calculation, useful to add extra search space
     tiling (tuple): tile dimensions
     tileExpression (function or None): tileExpression(row,col) should return a 
                                        regular expression specifing the path and images 
@@ -1086,7 +1086,7 @@ def xmlImportFile(regularExpression, size = None, overlap = None, addOverlap = 0
 def importData(xmlImportFile = None, baseDirectory = None, resolution = None, orientation = None,
                regularExpression = None, form = None, rescan = None, sparse = None, xmlResultFile = None, clear = True, clearBin = True):
 
-  """Runs the import commmand of TeraSticher generating the xml import file from a folder of files
+  """Runs the import commmand of TeraStitcher generating the xml import file from a folder of files
   
   Arguments:
     xmlImportFile (str or None): the xml import descriptor
@@ -1108,7 +1108,7 @@ def importData(xmlImportFile = None, baseDirectory = None, resolution = None, or
     :func:`xmlImportFile`, `TeraStitcher import step <https://github.com/abria/TeraStitcher/wiki/Step-1:-Import>`_.
   """
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
     
   if baseDirectory is None and xmlImportFile is None:
@@ -1217,7 +1217,7 @@ def plotImportPreview(importResult):
 
   
 def alignData(xmlImportFile, slices = None, subRegion = None, overlap = None, search = None, algorithm = None, channel = None, xmlResultFile = None, clearBin = True):
-  """Runs the alignment commmand of TeraSticher aligning the tiles
+  """Runs the alignment commmand of TeraStitcher aligning the tiles
   
   Arguments:
     xmlImportFile (str or None): the xml import descriptor
@@ -1237,7 +1237,7 @@ def alignData(xmlImportFile, slices = None, subRegion = None, overlap = None, se
     `TeraStitcher align step <https://github.com/abria/TeraStitcher/wiki/Step-2:-Align>`_.
   """
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
   
   if clearBin:
@@ -1291,12 +1291,12 @@ def alignData(xmlImportFile, slices = None, subRegion = None, overlap = None, se
 
 
 def projectDisplacements(xmlDisplacementFile, xmlResultFile = None, deleteBin = True):
-  """Runs the projection step of TeraSticher to aligning the tiles
+  """Runs the projection step of TeraStitcher to aligning the tiles
   
   Arguments:
     xmlDisplacementFile (str or None): the xml displacement descriptor
     xmlResultFile (str or None): output xml projection file name
-    deleteBin (bool): delete binary file generated by TeraSticher import before projecting data
+    deleteBin (bool): delete binary file generated by TeraStitcher import before projecting data
   
   Returns:
     str : the result xml projection file name
@@ -1308,7 +1308,7 @@ def projectDisplacements(xmlDisplacementFile, xmlResultFile = None, deleteBin = 
      Use deleteBin = True option to prevent conflicts/errors with the binary data file generated by import command.
   """
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
   
   if deleteBin:
@@ -1333,7 +1333,7 @@ def projectDisplacements(xmlDisplacementFile, xmlResultFile = None, deleteBin = 
 
 
 def thresholdDisplacements(xmlProjectionFile, threshold = None, xmlResultFile = None):
-  """Runs the thresholding step of TeraSticher to aligning the tiles
+  """Runs the thresholding step of TeraStitcher to aligning the tiles
   
   Arguments:
     xmlProjectionFile (str or None): the xml projection descriptor
@@ -1347,7 +1347,7 @@ def thresholdDisplacements(xmlProjectionFile, threshold = None, xmlResultFile = 
     `TeraStitcher project step <https://github.com/abria/TeraStitcher/wiki/Step-4:-Threshold>`_.
   """
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
   
   cmd = TeraStitcherBinary + ' --displthres ';
@@ -1375,7 +1375,7 @@ def thresholdDisplacements(xmlProjectionFile, threshold = None, xmlResultFile = 
 
 
 def placeTiles(xmlThresholdFile, algorithm = None, xmlResultFile = None):
-  """Runs the placement step of TeraSticher to aligning the tiles
+  """Runs the placement step of TeraStitcher to aligning the tiles
   
   Arguments:
     xmlThresholdFile (str or None): the xml threshold descriptor
@@ -1392,7 +1392,7 @@ def placeTiles(xmlThresholdFile, algorithm = None, xmlResultFile = None):
     `TeraStitcher project step <https://github.com/abria/TeraStitcher/wiki/Step-5:-Place>`_.
   """'--oV=',
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
   
   cmd = TeraStitcherBinary + ' --placetiles ';
@@ -1417,7 +1417,7 @@ def placeTiles(xmlThresholdFile, algorithm = None, xmlResultFile = None):
 
 
 def stitchData(xmlPlacementFile, resultPath, algorithm = None, resolutions = None, form = None, channel = None, subRegion = None, bitDepth = None, blockSize = None, cleanup = True, compress = False):
-  """Runs the final stiching step of TeraSticher
+  """Runs the final stiching step of TeraStitcher
   
   Arguments:
     xmlPlacementFile (str or None): the xml placement descriptor
@@ -1431,7 +1431,7 @@ def stitchData(xmlPlacementFile, resultPath, algorithm = None, resolutions = Non
     subRegion (tuple or None): optional sub region in the form ((xmin,xmax),(ymin,ymax), (zmin, zmax))
     bitDepth (int or None): the pits per pixel to use, default is 8
     blockSize (tuple): the sizes of various blocks to save stiched image into
-    cleanup (bool): if True delete the TeraSticher file structure
+    cleanup (bool): if True delete the TeraStitcher file structure
     compress (bool): if True compress final tif images
   
   Returns:
@@ -1441,7 +1441,7 @@ def stitchData(xmlPlacementFile, resultPath, algorithm = None, resolutions = Non
     `TeraStitcher project step <https://github.com/abria/TeraStitcher/wiki/Step-6:-Merge>`_.
   """
   
-  checkSticherInitialized();
+  checkStitcherInitialized();
   global TeraStitcherBinary;
   
   cmd = TeraStitcherBinary + ' --merge --imout_format="tif" ';
@@ -1505,7 +1505,7 @@ def stitchData(xmlPlacementFile, resultPath, algorithm = None, resolutions = Non
   
   if filename is not None:
     
-    if io.isFileExpression(filename, check = False): # convert list of files in TeraSticher from
+    if io.isFileExpression(filename, check = False): # convert list of files in TeraStitcher from
       #TODO: multiple resolutions
       basedir = max(glob.glob(os.path.join(resultPath, '*')), key = os.path.getmtime);
       if cleanup:
@@ -1514,7 +1514,7 @@ def stitchData(xmlPlacementFile, resultPath, algorithm = None, resolutions = Non
       else:
         copyTeraStitcherStackToFileList(basedir, os.path.join(resultPath, filename));
 
-    else:   # single file in TeraSticher folder
+    else:   # single file in TeraStitcher folder
       #get most recent created file 
       #TODO: test if this works
       imgfile = max(glob.glob(os.path.join(resultPath, '*/*/*/*')), key = os.path.getmtime);

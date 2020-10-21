@@ -9,7 +9,7 @@ This part of the *ClearMap* toolbox is designed in a modular way to allow for
 fast and flexible extension and addition of specific image processing 
 algorithms.
 
-While most psrts contain lower level image processing methods, more specialized
+While most parts contain lower level image processing methods, more specialized
 routines that combine the basic routines can be found in 
 :mod"`ClearMap.ImageProcessing.Experts`.
 
@@ -21,11 +21,11 @@ For large volumetric image data sets from e.g. light sheet microscopy
 parallel processing is essential to speed up calculations.
 
 In this toolbox the image processing is parallelized in two different
-ways depending on how the algorithms parallelzie.
+ways depending on how the algorithms parallelize.
 
   * Most routines allow to split volumetric data into several blocks, 
     typically in z-direction. Because  image processing steps are often
-    non-local but still only incorporate a certan range, blocks are created 
+    non-local but still only incorporate a certain range, blocks are created
     with overlaps and the results rejoined accordingly to minimize boundary 
     effects. 
     
@@ -34,7 +34,7 @@ ways depending on how the algorithms parallelzie.
     
   * Full parallelization using memory mapping and parallel implementations via
     cython. The :mod:~ClearMap.ImageProcessing.Skeletonization` algorithm is
-    an example block processing is not feasable in this situation.
+    an example block processing is not feasible in this situation.
 """
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
 __license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE.txt)'

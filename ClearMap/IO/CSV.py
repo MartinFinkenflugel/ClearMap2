@@ -106,7 +106,7 @@ class Source(src.Source):
     Returns
     -------
     order : str
-      Returns 'C' for C contigous and 'F' for fortran contigous, None otherwise.
+      Returns 'C' for C contiguous and 'F' for fortran contiguous, None otherwise.
     """
     return self.array.order;
   

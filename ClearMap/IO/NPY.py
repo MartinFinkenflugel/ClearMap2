@@ -107,7 +107,7 @@ class Source(src.Source):
     Returns
     -------
     order : str
-      Returns 'C' for C contigous and 'F' for fortran contigous, None otherwise.
+      Returns 'C' for C contiguous and 'F' for fortran contiguous, None otherwise.
     """
     return order(self.array);
   
@@ -229,7 +229,7 @@ class Source(src.Source):
 ###############################################################################
 
 def order(array):
-  """Returns the contigous order of an array.
+  """Returns the contiguous order of an array.
   
   Arguments
   ---------

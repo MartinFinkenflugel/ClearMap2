@@ -381,7 +381,7 @@ class Source(src.VirtualSource):
     #print indices, fl
      
     #create directory if it does not exists
-    #Note: move this to func if files need to be distributed accross several directories
+    #Note: move this to func if files need to be distributed across several directories
     fu.create_directory(fl[0], split=True);     
     
     if processes is None:

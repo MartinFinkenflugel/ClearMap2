@@ -203,7 +203,7 @@ def var(group, **args):
     return g.var(axis = 0);    
     
 
-def weights_from_precentiles(intensities, percentiles = [25,50,75,100]):
+def weights_from_percentiles(intensities, percentiles = [25,50,75,100]):
     perc = np.percentiles(intensities, percentiles);
     weights = np.zeros(intensities.shape);
     for p in perc:

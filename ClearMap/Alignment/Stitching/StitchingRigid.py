@@ -3,7 +3,7 @@
 StitchingRigid
 ==============
 
-Stitching module for aligning and stitching data sets ridgidly.
+Stitching module for aligning and stitching data sets rigidly.
 
 The module provides base classes and routines for stitching images. The
 :mod:`~ClearMap.Alignment.Stitching.StichingWobbly` module builds on this 
@@ -220,7 +220,7 @@ class Region(object):
     coordinate : int
       The non-local coordinate along the axis.
     axis : int
-      The axis of the coordiante.
+      The axis of the coordinate.
     
     Returns
     -------
@@ -238,7 +238,7 @@ class Region(object):
     local_coordinate : int
       The local coordinate along the axis.
     axis : int
-      The axis of the coordiante.
+      The axis of the coordinate.
     
     Returns
     -------
@@ -542,12 +542,12 @@ class Source(SourceRegion, src.AbstractSource):
 
     Note
     ----
-    Either coordiante or local_coordinate must be given.
+    Either coordinate or local_coordinate must be given.
     """
     
     if local_coordinate is None:
       if coordinate is None:
-        raise ValueError('Either a coordiante or a base_coordainte needs to be given!');
+        raise ValueError('Either a coordinate or a base_coordainte needs to be given!');
       local_coordinate = self.coordinate_to_local(coordinate, axis=axis);
     
     if not 0 <= local_coordinate < self.shape[axis]:
@@ -705,7 +705,7 @@ class Slice(slc.Slice, SourceRegion):
 
 
 def _source_string(self):
-  """Helper to generate a string describing a source with positional infomration."""
+  """Helper to generate a string describing a source with positional information."""
   try:
     name = self.name;
     name = '%s' % name if name is not None else '';
@@ -3359,7 +3359,7 @@ def align_layout_rigid_mip(layout, depth = 10, max_shifts = 10, ranges = None, c
   max_shifts = _format_max_shifts(max_shifts, layout.ndim);
   n_alignments = layout.n_alignments;
   
-  _align = ft.partial(_align_layout_ridgid_mip, 
+  _align = ft.partial(_align_layout_rigid_mip,
                       n_alignments=n_alignments,
                       depth=depth, max_shifts=max_shifts, ranges=ranges,
                       clip=clip, background=background, verbose=verbose);
@@ -3391,7 +3391,7 @@ def align_layout_rigid_mip(layout, depth = 10, max_shifts = 10, ranges = None, c
 
 
 @ptb.parallel_traceback
-def _align_layout_ridgid_mip(src1, src2, aid, n_alignments, depth, max_shifts, ranges, clip, background, verbose):
+def _align_layout_rigid_mip(src1, src2, aid, n_alignments, depth, max_shifts, ranges, clip, background, verbose):
   if verbose:
     print('Alignment: aligning %r with %r, alignment pair %d/%d !' % (src1.tile_position, src2.tile_position, aid, n_alignments));
      
@@ -3493,7 +3493,7 @@ def align_layout_rigid_mips(layout, depth = 10, max_shifts = 10, ranges = None, 
   max_shifts = _format_max_shifts(max_shifts, layout.ndim);
   n_alignments = layout.n_alignments;
   
-  _align = ft.partial(_align_layout_ridgid_mips, 
+  _align = ft.partial(_align_layout_rigid_mips,
                       n_alignments=n_alignments,
                       depth=depth, max_shifts=max_shifts, ranges=ranges,
                       clip=clip, background=background, verbose=verbose);
@@ -3525,7 +3525,7 @@ def align_layout_rigid_mips(layout, depth = 10, max_shifts = 10, ranges = None, 
 
 
 @ptb.parallel_traceback
-def _align_layout_ridgid_mips(src1, src2, aid, n_alignments, depth, max_shifts, ranges, clip, background, verbose):
+def _align_layout_rigid_mips(src1, src2, aid, n_alignments, depth, max_shifts, ranges, clip, background, verbose):
   if verbose:
     print('Alignment: aligning %r with %r, alignment pair %d/%d !' % (src1.tile_position, src2.tile_position, aid, n_alignments));
   

@@ -384,7 +384,7 @@ def findNeighbours(indices, center, shape, strides, mask):
   """Finds all indices within a specified kernel region centered at a point"""
   
   if len(strides) != 3 or len(shape) != 3 or (strides[0] != 1 and strides[2] != 1):
-    raise RuntimeError('only 3d C or F contiguous arrays suported');
+    raise RuntimeError('only 3d C or F contiguous arrays supported');
 
   if isinstance(mask, int):
     mask = (mask,);
@@ -431,7 +431,7 @@ def readNumpyHeader(filename):
  
  
 def _offsetFromSlice(sourceSlice, order = 'F'):
-  """Checks if slice is compatible with the large data loader and returns z coordiante"""
+  """Checks if slice is compatible with the large data loader and returns z coordinate"""
    
   if order == 'C':
     os = 1; oe = 3; oi = 0;

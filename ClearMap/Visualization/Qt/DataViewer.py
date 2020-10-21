@@ -114,7 +114,7 @@ class LUT(pg.QtGui.QWidget):
     
     self.layout.addLayout(self.range_layout,1,0,1,1);
     
-    self.precentiles = percentiles;
+    self.percentiles = percentiles;
     self.percentile_id = [2,2];
         
     for m,ab in enumerate(self.range_buttons):
@@ -132,8 +132,8 @@ class LUT(pg.QtGui.QWidget):
   
   def updateRegionRange(self, m,p):
     self.percentile_id[m] = p;
-    pmin = self.precentiles[0][self.percentile_id[0]];
-    pmax = self.precentiles[1][self.percentile_id[1]];
+    pmin = self.percentiles[0][self.percentile_id[0]];
+    pmax = self.percentiles[1][self.percentile_id[1]];
     self.updateRegionPercentile(pmin, pmax);  
   
   def updateRegionPercentile(self,pmin,pmax):

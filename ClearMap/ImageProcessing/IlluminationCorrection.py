@@ -74,7 +74,7 @@ def correct_illumination(source, flatfield = None, background = None, scaling = 
   processes : int or None
     Number of processes to use. If None use macimal available.
   verbose : bool
-    If true, print progrss infomration.
+    If true, print progrss information.
     
   Returns
   ------- 

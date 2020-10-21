@@ -312,7 +312,7 @@ def read(source, sink = None, slicing = None, memory = None, blocks = None, proc
   source : str or Source
     The source on diks to load.
   slicing : slice, tuple, or None
-    Optional sublice to read.
+    Optional subslice to read.
   memory : 'shared; or None
     If 'shared', read into shared memory.
   blocks : int or None
@@ -339,7 +339,7 @@ def read(source, sink = None, slicing = None, memory = None, blocks = None, proc
   if location is None:
     raise ValueError('The source has not valid location to read from!');  
   if order not in ['C', 'F']:
-    raise NotImplementedError('Cannot read in parallel from non-contigous source!');
+    raise NotImplementedError('Cannot read in parallel from non-contiguous source!');
     #TODO: implement parallel reader with strides !
   
   sink, sink_buffer = initialize_sink(sink=sink, shape=shape, dtype=dtype, order=order, memory=memory, as_1d=True);
@@ -418,7 +418,7 @@ def write(sink, source, slicing = None, overwrite = True, blocks = None, process
   sink_order, sink_offset = sink.order, sink.offset;
   
   if sink_order not in ['C', 'F']:
-    raise NotImplementedError('Cannot read in parallel from non-contigous source!');  
+    raise NotImplementedError('Cannot read in parallel from non-contiguous source!');
   if (source_order != sink_order):
     raise RuntimeError('Order of source %r and sink %r do not match!' % (source_order, sink_order));    
   
@@ -512,7 +512,7 @@ def initialize_processing(processes = None, verbose = False, function = None, bl
   
   Arguments
   ---------
-  processes : int, 'seial' or None
+  processes : int, 'serial' or None
     The number of processes to use. If None use number of cpus.
   verbose : bool
     If True, print progress information.
@@ -585,7 +585,7 @@ def initialize_source(source, return_buffer = True, as_1d = False,
   Returns
   -------
   source : Source
-    The intialized source.
+    The initialized source.
   source_buffer
     The initialized source as buffer.
   shape : tuple of int
@@ -642,15 +642,15 @@ def initialize_sink(sink = None, shape = None, dtype = None, order = None, memor
   dtype : dtype
     Optional dtype of the sink. If None, inferred from the source.
   order : 'C', 'F' or None
-    Optonal order of the sink. If None, inferred from the source.
+    Optional order of the sink. If None, inferred from the source.
   memory : 'shared' or None
     If 'shared' create a shared memory sink.
   location : str
     Optional location specification of the sink.
   source : Source or None
-    Optional source to infer sink specifictions from.
+    Optional source to infer sink specifications from.
   return_buffer : bool
-    If True, return alos a buffer compatible with cython memory views. 
+    If True, also return a buffer compatible with cython memory views.
   return_shape : bool
     If True, also return shape of the sink.
   return_strides : bool
@@ -659,7 +659,7 @@ def initialize_sink(sink = None, shape = None, dtype = None, order = None, memor
   Returns
   -------
   sink : Source
-    The intialized sink.
+    The initialized sink.
   buffer : array
     Buffer of the sink.
   shape : tuple of int
@@ -972,7 +972,7 @@ def _test():
 #  """Finds all indices within a specified kernel region centered at a point"""
 #  
 #  if len(strides) != 3 or len(shape) != 3 or (strides[0] != 1 and strides[2] != 1):
-#    raise RuntimeError('only 3d C or F contiguous arrays suported');
+#    raise RuntimeError('only 3d C or F contiguous arrays supported');
 #
 #  if isinstance(mask, int):
 #    mask = (mask,);

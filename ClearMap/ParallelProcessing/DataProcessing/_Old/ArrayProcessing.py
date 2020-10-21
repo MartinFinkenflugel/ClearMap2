@@ -182,7 +182,7 @@ def _initialize_processing(processes = None, verbose = False, function = None):
   
   Arguments
   ---------
-  processes : int, 'seial' or None
+  processes : int, 'serial' or None
     The number of processes to use. If None use number of cpus.
   verbose : bool
     If True, print progress information.
@@ -246,7 +246,7 @@ def _initialize_source(source, as_source = False, as_1d = False, return_shape = 
   Returns
   -------
   source : Source or buffer
-    The intialized source.
+    The initialized source.
   shape : tuple of int
     Shape of the source.
   return_Strides : tuple of int
@@ -698,7 +698,7 @@ def _test():
 #  """Finds all indices within a specified kernel region centered at a point"""
 #  
 #  if len(strides) != 3 or len(shape) != 3 or (strides[0] != 1 and strides[2] != 1):
-#    raise RuntimeError('only 3d C or F contiguous arrays suported');
+#    raise RuntimeError('only 3d C or F contiguous arrays supported');
 #
 #  if isinstance(mask, int):
 #    mask = (mask,);
@@ -745,7 +745,7 @@ def _test():
 # 
 # 
 #def _offsetFromSlice(sourceSlice, order = 'F'):
-#  """Checks if slice is compatible with the large data loader and returns z coordiante"""
+#  """Checks if slice is compatible with the large data loader and returns z coordinate"""
 #   
 #  if order == 'C':
 #    os = 1; oe = 3; oi = 0;

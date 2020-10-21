@@ -3,7 +3,7 @@
 Rank
 ====
 
-This sub-package provides various volumetric filter kernels and structure elments
+This sub-package provides various volumetric filter kernels and structure elements
 
 A set of linear filters can be applied to the data using 
 :mod:`~ClearMap.ImageProcessing.Filter.LinearFilter`. 
@@ -11,7 +11,7 @@ A set of linear filters can be applied to the data using
 Because its utility for cell detection the difference of Gaussians filter
 is implemented directly in :mod:`~ClearMap.ImageProcessing.Filter.DoGFilter`.
 
-The fitler kernels defined in :mod:`~ClearMap.ImageProcessing.Filter.FilterKernel` 
+The filter kernels defined in :mod:`~ClearMap.ImageProcessing.Filter.FilterKernel`
 can be used in combination with the :mod:`~ClearMap.ImageProcessing.Convolution` 
 module.
 

@@ -13,11 +13,11 @@ Supported functionality:
 
     
 Main routines are:
-    * :func:`~ClearMap.Visualziation.Vispy.Plot3d.list_line_plot_3d`.
-    * :func:`~ClearMap.Visualziation.Vispy.Plot3d.list_plot_3d`.
-    * :func:`~ClearMap.Visualziation.Vispy.Plot3d.plot_3d`.
-    * :func:`~ClearMap.Visualziation.Vispy.PlotGraph3d.plot_graph_line`.
-    * :func:`~ClearMap.Visualziation.Vispy.PlotGraph3d.plot_graph_mesh`.
+    * :func:`~ClearMap.Visualization.Vispy.Plot3d.list_line_plot_3d`.
+    * :func:`~ClearMap.Visualization.Vispy.Plot3d.list_plot_3d`.
+    * :func:`~ClearMap.Visualization.Vispy.Plot3d.plot_3d`.
+    * :func:`~ClearMap.Visualization.Vispy.PlotGraph3d.plot_graph_line`.
+    * :func:`~ClearMap.Visualization.Vispy.PlotGraph3d.plot_graph_mesh`.
 """ 
 __author__    = 'Christoph Kirst <ckirst@rockefeller.edu>'
 __license__   = 'MIT License <http://www.opensource.org/licenses/mit-license.php>'

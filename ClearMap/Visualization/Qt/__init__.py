@@ -8,9 +8,9 @@ Supported functionality:
 
     * Data Viewer to view slices of volumetric data
     * Parameter setter (under construction)
-    * Pipeline desinger (under construction)
+    * Pipeline designer (under construction)
     
-Main routine is :func:`~ClearMap.Visualziation.Qt.DataViewer.plot`.
+Main routine is :func:`~ClearMap.Visualization.Qt.DataViewer.plot`.
 """ 
 __author__    = 'Christoph Kirst <ckirst@rockefeller.edu>'
 __license__   = 'MIT License <http://www.opensource.org/licenses/mit-license.php>'

@@ -3,7 +3,7 @@
 MachineLeanring
 ===============
 
-This module containes image processing methods based on machine learning.
+This module contains image processing methods based on machine learning.
 """
 __author__    = 'Christoph Kirst <christoph.kirst.ck@gmail.com>'
 __license__   = 'GPLv3 - GNU General Public License v3 (see LICENSE.txt)'

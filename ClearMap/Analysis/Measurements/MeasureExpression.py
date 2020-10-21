@@ -101,7 +101,7 @@ def search_indices(radii, ndim):
   """
   radius = int(np.ceil(np.max(radii)));
   
-  #create coordiante grid          
+  #create coordinate grid
   grid = [np.arange(-radius,radius+1)] * ndim;                    
   grid = np.array(np.meshgrid(*grid, indexing = 'ij'));
   

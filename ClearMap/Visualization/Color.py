@@ -32,12 +32,12 @@ import matplotlib.colors as mpc
 
 
 def color(arg, alpha = None, as_int = False, int_type = int):
-  """Converts color arguent to rgb values
+  """Converts color argument to rgb values
   
   Arguments
   ---------
   arg : object
-    Color specifiction, e.g. a rgb tuple, color name from matplotlib or vispy, hex code
+    Color specification, e.g. a rgb tuple, color name from matplotlib or vispy, hex code
   alpha : None, bool or float
     Include the alpha value in the rgb tuple. If None and an alpha value exists,
     it is kept, otherwise it is not included. If False the alpha value is not included.
@@ -342,7 +342,7 @@ def orientation_to_boys(orientations, alpha = None, as_int = False):
   Returns
   -------
   colors : array
-    RGB colors for the oreitnation vectors according to Boys coloring.
+    RGB colors for the orientation vectors according to Boys coloring.
     
   Note
   ----
@@ -487,7 +487,7 @@ def orientation_to_rgb(orientation, alpha = None, as_int = False):
     
   Note
   ----
-  This color map is not continous.
+  This color map is not continuous.
   """
 
   rgb = np.asarray(orientation, dtype = float);
@@ -1083,7 +1083,7 @@ def write_LUT(filename, colors):
   filename : str
     file name of the lookup table
   colors : array
-    Colors as nX3 array to write to te ookup table
+    Colors as nX3 array to write to te lookup table
   
   Returns
   -------
@@ -1108,7 +1108,7 @@ def write_PAL(filename, colors):
   filename : str
     file name of the lookup table
   colors : array
-    Colors as nX3 array to write to te ookup table
+    Colors as nX3 array to write to te lookup table
   
   Returns
   -------

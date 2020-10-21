@@ -7,7 +7,7 @@ via light sheet microscopy from iDISCO+ cleared tissue samples
 immunolabeled for proteins. 
 
 *ClearMap* includes 
-  * non-ridgid wobbly stitching,
+  * non-rigid wobbly stitching,
   * image registration to a 3D annotated references 
     (e.g. the Allen Brain Institute Atlases), 
   * a toolbox for large volumetric image processing O(TB), 
@@ -28,7 +28,7 @@ structure of the code will enable many new modules to be added to ClearMap to
 broaden the range of applications to different types of biological objects or
 structures.
 
-More informatoin and downloads for *ClearMap* can be found in our 
+More information and downloads for *ClearMap* can be found in our
 `repository <http://www.github.com/ChristophKirst/ClearMap2>`_.
 
 
